@@ -32,14 +32,22 @@ void ve(){
 void nhap(){
     int n;
     std::cout<<"---------------------------------------------------\n";
+    lai:
     std::cout<<"Nhap so phong muon thue: ";std::cin>>n;
-    char loaiPhong='k';
-    std::cout<<"\nNhap loai phong: ";std::cin>>loaiPhong;
-    phong[n]=loaiPhong;
-
-}
-void xem(){
+    if (phong[n]!='K')
+    {
+        std::cout<<"Phong da duoc thue\n";
+        goto lai;
+    }
+    else
+    {
+        char loaiPhong='k';
+        std::cout<<"\nNhap loai phong: ";std::cin>>loaiPhong;
+        phong[n]=loaiPhong;
+    }
     
+    
+
 }
 void sua(){
     
@@ -69,7 +77,6 @@ int main(){
         std::cout<<"2. \n";
         std::cout<<"2. \n";
         std::cout<<"4. \n";
-        std::cout<<"5. \n";
         std::cout<<"0. Thoat\n";
         std::cout<<"---------------------------------\n";
         std::cin>>luaChon;
@@ -79,21 +86,17 @@ int main(){
             nhap();
             break;
         case 2:
-            xem();
-            break;
-        case 3:
             sua();
             break;
-        case 4:
+        case 3:
             timKiem();
             break;
-        case 5:
+        case 4:
             thongKe();
             break;
-        case 6:
+        case 5:
             xoa();
             break;
-        
         default:
             break;
         }
